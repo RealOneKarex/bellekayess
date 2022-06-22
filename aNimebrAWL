@@ -316,8 +316,9 @@ w:AddToggle(
                             break
                         end
 			wait()
-			if game:GetService("StarterGui").PlayGui.BossEventFrame.Augment.Visible == true then
-			    game:GetService("ReplicatedStorage").RemoteFunctions.AugmentBossEvent(
+			if game:GetService("StarterGui").PlayGui.BossEventFrame.Augment.Visible == true
+			then
+			    game:GetService("ReplicatedStorage").RemoteFunctions.AugmentBossEvent()
                                 end
                             end
                         end
