@@ -13,7 +13,7 @@ _G.Settings = {
     autospin2 = false,
     autolvl = false,
     autoultimate = false,
-    doublereward = false,
+    autodouble = false,
     selectdifficulty = "Easy",
     selectworld = 1,
     LeaveOneLeft = false,
@@ -318,11 +318,13 @@ w:AddToggle(
 			wait()
 			if game:GetService("StarterGui").PlayGui.BossEventFrame.Augment.Visible == true then
 			    game:GetService("ReplicatedStorage").RemoteFunctions.AugmentBossEvent()
-			end
-		   end
-	      end
-	   )
-      end
+                                end
+                            end
+                        end
+                    end
+                end
+            )
+        end
     }
 )
 
