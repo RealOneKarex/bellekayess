@@ -281,6 +281,29 @@ w:AddToggle(
 )
 w:AddToggle(
     {
+        Name = "Auto Augment",
+        Default = _G.Settings.autodouble,
+        Callback = function(B)
+            _G.Settings.autodouble = B
+            saveSettings()
+            task.spawn(
+                function()
+                    while task.wait() do
+                        if not _G.Settings.autodouble then
+                            break
+                        end
+                        wait()
+			if game:GetService("StarterGui").PlayGui.BossEventFrame.Augment.Visible == true then
+			    game:GetService("ReplicatedStorage").RemoteFunctions.AugmentBossEvent()
+                        end
+                    end
+                end
+            )
+        end
+    }
+)
+w:AddToggle(
+    {
         Name = "Auto Spin Wheel",
         Default = _G.Settings.autospin,
         Callback = function(B)
@@ -302,33 +325,6 @@ w:AddToggle(
         end
     }
 )
-w:AddToggle(
-    {
-        Name = "Auto Double",
-        Default = _G.Settings.autodouble,
-        Callback = function(B)
-            _G.Settings.autoultimate = B
-            saveSettings()
-            task.spawn(
-                function()
-		  while task.wait(2) do
-                        if not _G.Settings.autodouble then
-                            break
-                        end
-			wait()
-			if game:GetService("StarterGui").PlayGui.BossEventFrame.Augment.Visible == true
-			then
-			    game:GetService("ReplicatedStorage").RemoteFunctions.AugmentBossEvent()
-                                end
-                            end
-                        end
-                    end
-                end
-            )
-        end
-    }
-)
-
 x:AddLabel("Rarity You Want Use For Feed")
 x:AddToggle(
     {
