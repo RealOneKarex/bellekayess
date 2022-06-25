@@ -13,7 +13,8 @@ _G.Settings = {
     autospin2 = false,
     autolvl = false,
     autoultimate = false,
-    autodouble = false,
+    auto
+    = false,
     selectdifficulty = "Easy",
     selectworld = 1,
     LeaveOneLeft = false,
@@ -294,7 +295,7 @@ w:AddToggle(
                         end
                         wait()
 			if game:GetService("StarterGui").PlayGui.BossEventFrame.Augment.Visible == true then
-			    game:GetService("ReplicatedStorage").RemoteFunctions.AugmentBossEvent()
+			    game:GetService("ReplicatedStorage").RemoteFunctions.AugmentBossEvent:InvokeServer()
                         end
                     end
                 end
