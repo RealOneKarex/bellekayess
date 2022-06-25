@@ -671,7 +671,7 @@ w:AddToggle(
                         if not _G.Settings.autoretry then
                             break
                         end
-                        wait()
+                        wait(3)
                         if
                             game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("ScreenGui") and
                                 game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui:FindFirstChild("OutroFrame") and
