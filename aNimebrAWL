@@ -294,7 +294,9 @@ w:AddToggle(
                             break
                         end
                         wait()
-			if game:GetService("StarterGui").PlayGui.BossEventFrame.Augment.Visible == true then
+			if 
+			game:GetService("StarterGui").PlayGui.BossEventFrame.Augment.Visible == true and
+			   game:GetService("Players").LocalPlayer.PlayerGui.ScreenGui.OutroFrame.Replay.Augment.Visible == true then
 			    game:GetService("ReplicatedStorage").RemoteFunctions.AugmentBossEvent:InvokeServer()
                         end
                     end
